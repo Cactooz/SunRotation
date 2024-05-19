@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "dev.cactooz.sunrotation.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
