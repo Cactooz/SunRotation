@@ -3,7 +3,8 @@
   "package": "dev.cactooz.sunrotation.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "LevelRendererMixin"
+    "LevelRendererMixin",
+    "FogRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
