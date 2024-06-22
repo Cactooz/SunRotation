@@ -13,13 +13,16 @@ public class FogRendererMixin {
 			slice = @Slice(
 					from = @At(
 							value = "INVOKE",
-							target = "Lnet/minecraft/client/multiplayer/ClientLevel;getSunAngle(F)F")
+							target = "Lnet/minecraft/client/multiplayer/ClientLevel;getSunAngle(F)F"
+					)
 			),
 			at = @At(
 					value = "INVOKE",
 					target = "Lorg/joml/Vector3f;<init>(FFF)V",
-					ordinal = 0))
-	private static void reset(Args args) {
+					ordinal = 0
+			)
+	)
+	private static void unRotateFog(Args args) {
 		float x = args.get(0);
 		args.set(0, 0.0f);
 		args.set(1, 0.0f);

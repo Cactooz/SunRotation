@@ -12,29 +12,35 @@ public class LevelRendererMixin {
 			slice = @Slice(
 					from = @At(
 							value = "INVOKE",
-							target = "Lnet/minecraft/client/multiplayer/ClientLevel;getSunAngle(F)F")
+							target = "Lnet/minecraft/client/multiplayer/ClientLevel;getSunAngle(F)F"
+					)
 			),
 			at = @At(
 					value = "CONSTANT",
 					target = "Lcom/mojang/math/Axis;rotationDegrees(F)Lorg/joml/Quaternionf;",
 					args = "floatValue=90.0",
-					ordinal = 0))
+					ordinal = 0
+			)
+	)
 	private float unRotateSunBloom(float original) {
-		return 0f;
+		return 0.0f;
 	}
 	
 	@ModifyExpressionValue(method = "renderSky",
 			slice = @Slice(
 					from = @At(
 							value = "INVOKE",
-							target = "Lnet/minecraft/client/multiplayer/ClientLevel;getRainLevel(F)F")
+							target = "Lnet/minecraft/client/multiplayer/ClientLevel;getRainLevel(F)F"
+					)
 			),
 			at = @At(
 					value = "CONSTANT",
 					target = "Lcom/mojang/math/Axis;rotationDegrees(F)Lorg/joml/Quaternionf;",
 					args = "floatValue=-90.0",
-					ordinal = 0))
+					ordinal = 0
+			)
+	)
 	private float unRotateSun(float original) {
-		return 0f;
+		return 0.0f;
 	}
 }
